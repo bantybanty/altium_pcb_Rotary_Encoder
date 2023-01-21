@@ -1,0 +1,15 @@
+Source PCB Design Rotary_Encoder_Square_Edge_Pannel.PcbDoc contains embedded board array. It is recomended to generate individual BOM for each embedded board PCB design.
+
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Rotary_Encoder.PrjPcb]
+   Generated File[Rotary_Encoder_Square_Edge_Pannel-RoundHoles-Plated.TXT]
+   Generated File[Rotary_Encoder_Square_Edge_Pannel-SlotHoles-Plated.TXT]
+   Generated File[Rotary_Encoder_Square_Edge_Pannel.LDP]
+   Generated File[Rotary_Encoder_Square_Edge_Pannel.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 03:26:34 On 07-11-2022

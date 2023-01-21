@@ -1,0 +1,9 @@
+Change Component Parameter Library Name in C10 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in C11 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in C12 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in FB10 Old=Celestial Altium Library - altium_library.DbLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in FM10 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in FM11 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in FM12 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in FM13 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in J10 Old=Miscellaneous Connectors.IntLib New=Rotary_Encoder.IntLib

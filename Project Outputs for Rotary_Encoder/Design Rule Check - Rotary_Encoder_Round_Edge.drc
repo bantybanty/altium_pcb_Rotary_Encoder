@@ -1,0 +1,103 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc
+Date     : 02-01-2023
+Time     : 02:21:34 AM
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.3mm) (Max=0.3mm) (Preferred=0.3mm) (InNetClass('Signal_1'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.3mm) (Max=0.3mm) (Preferred=0.3mm) (InNetClass('Signal_2'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.3mm) (Max=0.75mm) (Preferred=0.4mm) (InNetClass('GND'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.3mm) (Max=0.3mm) (Preferred=0.3mm) (InNetClass('Signal'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.3mm) (Max=0.75mm) (Preferred=0.4mm) (InNetClass('VCC_IN'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.3mm) (Max=0.75mm) (Preferred=0.4mm) (InNetClass('VCC'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InPadClass('PowerPads'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.3mm) (Conductor Width=0.127mm) (Air Gap=0.127mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.1mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.25mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad R22-1(3.413mm,17.481mm) on Bottom Layer And Via (1.45mm,18.05mm) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [0.2mm]
+Rule Violations :1
+
+Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room U_1_Rotary_Encoder_Input_output (Bounding Region = (62.116mm, 28.929mm, 84.075mm, 52.331mm) (InComponentClass('U_1_Rotary_Encoder_Input_output'))
+Rule Violations :0
+
+Processing Rule : Room U_2_Rotary_Encoder_IC (Bounding Region = (62.751mm, 30.054mm, 83.667mm, 51.092mm) (InComponentClass('U_2_Rotary_Encoder_IC'))
+Rule Violations :0
+
+Processing Rule : Room U_3_Rotary_Encoder_Encoder (Bounding Region = (53.638mm, 28.252mm, 104.438mm, 53.652mm) (InComponentClass('U_3_Rotary_Encoder_Encoder'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=1816.048mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Waived Violations Of Rule : Un-Routed Net Constraint ( (All) )
+   Waived Violation between Un-Routed Net Constraint: Via (1.45mm,18.05mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.Waived by Bantybanty Bantybanty at 02-01-2023 01:05:54 AM
+   Waived Violation between Un-Routed Net Constraint: Via (18.05mm,1.45mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.Waived by Bantybanty Bantybanty at 02-01-2023 01:05:54 AM
+   Waived Violation between Un-Routed Net Constraint: Via (18.05mm,18.05mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.Waived by Bantybanty Bantybanty at 02-01-2023 01:05:54 AM
+Waived Violations :3
+
+Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "C10" (1.072mm,0.009mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (0.164mm < 0.2mm) Between Board Edge And Text "FB10" (0.164mm,2.884mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (0.12mm < 0.2mm) Between Board Edge And Text "R23" (0.762mm,15.713mm) on Bottom Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (0.043mm,10.728mm)(0.043mm,12.328mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (0.068mm,7.538mm)(0.068mm,9.138mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (0.025mm < 0.2mm) Between Board Edge And Track (0.1mm,3.778mm)(0.1mm,6.578mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (0.025mm < 0.2mm) Between Board Edge And Track (0.1mm,3.778mm)(0.485mm,3.778mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (0.025mm < 0.2mm) Between Board Edge And Track (0.1mm,6.578mm)(0.485mm,6.578mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (16.096mm,0.098mm)(16.096mm,2.638mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (3.396mm,0.098mm)(16.096mm,0.098mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (3.396mm,0.098mm)(3.396mm,2.638mm) on Top Overlay Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM
+Waived Violations :11
+
+
+Violations Detected : 1
+Waived Violations : 14
+PCB Health Issues : 0
+Time Elapsed        : 00:00:01

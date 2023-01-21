@@ -1,0 +1,10 @@
+Change Component Parameter Library Name in C20 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in C21 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in C22 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in R20 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in R21 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in R22 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in R23 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in R24 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in R25 Old=Custom.IntLib New=Rotary_Encoder.IntLib
+Change Component Parameter Library Name in U20 Old=Custom-IC.IntLib New=Rotary_Encoder.IntLib

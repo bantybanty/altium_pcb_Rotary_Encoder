@@ -1,0 +1,20 @@
+Change Component Library : Designator=E30 Old Library=Celestial Altium Library - altium_library.DbLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=FB10 Old Library=Celestial Altium Library - altium_library.DbLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=U20 Old Library=Custom-IC.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=C10 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=C11 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=C12 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=C20 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=C21 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=C22 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=FM10 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=FM11 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=FM12 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=FM13 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=R20 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=R21 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=R22 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=R23 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=R24 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=R25 Old Library=Custom.IntLib New Library=Rotary_Encoder.IntLib
+Change Component Library : Designator=J10 Old Library=Miscellaneous Connectors.IntLib New Library=Rotary_Encoder.IntLib

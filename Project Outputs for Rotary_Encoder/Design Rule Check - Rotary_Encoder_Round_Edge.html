@@ -1,0 +1,446 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\desktop\Documents\Project Files\Altium\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">02-01-2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">02:21:34 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc" class="file"><acronym title="C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc">C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">1</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">14</td></tr>
+</table>
+</td>
+</table><a name="IDODDSCXTJGIPCCORKLEDFCKDNALYR5E5TFACNCDLSSD5XEPGWZRRI"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ3WCXOJFSIL3DNCPUGUX0ZJTVBXIFVFHI5HFH1KEBI5VTNTWQJRC">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTKMBSSWHL2CMJTYJNABLTMWMMOSV1UY5023C1MEQT42FOZR512XG">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1DAFD2EG55HCETQLEUCZXHO2TFBE2LCAUSJKPRPEWD1ICVUINOSC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQIOONXO30NC2H44LYNGAGXRAMBUSQCCVSYGFWHFKN5S2ARD1SJN">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIEGXIBLNVMQPMG43D4MZEU4RFHNSVK1DMGBEYEOX20VV01OMBRBG">Width Constraint (Min=0.3mm) (Max=0.3mm) (Preferred=0.3mm) (InNetClass('Signal_1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPTLF3VEUHBRWMUDFYXN2T1F3KODLLYAXVXYOOXCIO0T1ERX4BNSM">Width Constraint (Min=0.3mm) (Max=0.3mm) (Preferred=0.3mm) (InNetClass('Signal_2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWAO3ZFIM1U31BDD1VMZEHT4F4DOQPYEIPN4340CQR1EXNDBH5DAK">Width Constraint (Min=0.3mm) (Max=0.75mm) (Preferred=0.4mm) (InNetClass('GND'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIJF3V21OA12ACYJ0EPW2ZQS2LDVNXEVDBBKYSXCNYSZEB40EIXY">Width Constraint (Min=0.3mm) (Max=0.3mm) (Preferred=0.3mm) (InNetClass('Signal'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID50Z0PJ1WUG20HRHY5LYKIGR0SMW4TUIB3343UJD1JCHLCZLVW34B">Width Constraint (Min=0.3mm) (Max=0.75mm) (Preferred=0.4mm) (InNetClass('VCC_IN'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDWAQLSWNFPVPKK1VOMQ5BHGWIGIRCKHXHX2YITGT21EDNLOXIICG">Width Constraint (Min=0.3mm) (Max=0.75mm) (Preferred=0.4mm) (InNetClass('VCC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEF5VJZGT25KBP4UHEKFHGTUMGHR5T1JN10VYSQIINYHVRM1QS02O">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InPadClass('PowerPads'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN54KGCUV2NVSNFYYVCRL4OATGSNGTO5P0ZT32PKQNNVCIG02CP">Power Plane Connect Rule(Relief Connect )(Expansion=0.3mm) (Conductor Width=0.127mm) (Air Gap=0.127mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEKUTQMGJ4JDTDEWBJQZMKL5AWKKWKACQZWTCQVDEY3DVMLDPR05H">Minimum Annular Ring (Minimum=0.1mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1KZ2INRPIN5CYNRCHJ5TM3FRGDV4APO2RKXFAG3AHK01D0UVYBL">Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0P0GYMIQR0BFFF3VZ5SFISSQHEC2AZ0BYGMEGLHAU2LEXOGUHFH">Hole To Hole Clearance (Gap=0.25mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDD3B3BXXPUL3PWWU4ZMP3OTL5GIWXVA554ZBVYB5KJAGZK55FNGB">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSEYYFX3SJRJFMJHNEPB1AQQUBCZQFBYM33R5MZG24D3QE0PAILUD">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNORRL0DVQO3YKAZR4PT1FNRG0OJSD5FNAESM2UMTXFUFAX5JKQPB">Silk to Silk (Clearance=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNNHC2PCGX2KHP45JPKE011CJZ1TNH3OQSW1VQN15O4NQN1EFNVK">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLLUT3XKAXZS0LUXWISVFUKZVQPSGAJ3SXWQE4EM40YXYN1U1LDYL">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR1RSRALNOFM2ORVA1B0AKFQPBLCCGW1M4D1Y4KOEXQTJYORVOFIK">Room U_1_Rotary_Encoder_Input_output (Bounding Region = (62.116mm, 28.929mm, 84.075mm, 52.331mm) (InComponentClass('U_1_Rotary_Encoder_Input_output'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4OCBGSMMVIFEITMYJ031M20NBDESVQLOB2OOWMGCKX05CYVPNUEB">Room U_2_Rotary_Encoder_IC (Bounding Region = (62.751mm, 30.054mm, 83.667mm, 51.092mm) (InComponentClass('U_2_Rotary_Encoder_IC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5DSP3RJXGSERGCYAQNTHALPDBMOQRAAPNGCSOOIL4YL40QTAMSSO">Room U_3_Rotary_Encoder_Encoder (Bounding Region = (53.638mm, 28.252mm, 104.438mm, 53.652mm) (InComponentClass('U_3_Rotary_Encoder_Encoder'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID014ZYFAWYLP0B2VINYYXPKXYZFBPDYFVGSRBKONXRN21V1UGROKB">Height Constraint (Min=0mm) (Max=1816.048mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">1</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3WCJLMYVQVFLDZSHV2GHM00NMB2E4B5RLMVWSWPAUA12BL1G1TN">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJZJWQVWJSRGHTI2AE3FGVVIJKNW3YYGX2BQETNSB1OORX10VZEJ">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">11</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">14</td>
+</tr>
+</table><br><a name="IDQDB3GDAXPRGXCEAESYJX5RJA3JL5QBW5QLMJ0ELOVHVI23H4M40L"><h2>Rule Violations</h2></a><a name="IDD3B3BXXPUL3PWWU4ZMP3OTL5GIWXVA554ZBVYB5KJAGZK55FNGB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2599.208mil|Location2.X=2610.458mil|Location1.Y=1906.597mil|Location2.Y=1917.847mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2599.208mil|Location2.X=2610.458mil|Location1.Y=1906.597mil|Location2.Y=1917.847mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.2mm &lt; 0.254mm) Between Pad R22-1(3.413mm,17.481mm) on Bottom Layer And Via (1.45mm,18.05mm) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [0.2mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDISNPTLUHBGYGCMLEMVEXNUIYRHHYSWN1BXREAFF3O15DBCP44CHD"><h2>Waived Violations</h2></a><a name="ID3WCJLMYVQVFLDZSHV2GHM00NMB2E4B5RLMVWSWPAUA12BL1G1TN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2502.716mil|Location2.X=2601.142mil|Location1.Y=1868.11mil|Location2.Y=1966.535mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2502.716mil|Location2.X=2601.142mil|Location1.Y=1868.11mil|Location2.Y=1966.535mil|Absolute=True">Un-Routed Net Constraint: Via (1.45mm,18.05mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:05:54 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3156.26mil|Location2.X=3254.685mil|Location1.Y=1214.567mil|Location2.Y=1312.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3156.26mil|Location2.X=3254.685mil|Location1.Y=1214.567mil|Location2.Y=1312.992mil|Absolute=True">Un-Routed Net Constraint: Via (18.05mm,1.45mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:05:54 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3156.26mil|Location2.X=3254.685mil|Location1.Y=1868.11mil|Location2.Y=1966.535mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3156.26mil|Location2.X=3254.685mil|Location1.Y=1868.11mil|Location2.Y=1966.535mil|Absolute=True">Un-Routed Net Constraint: Via (18.05mm,18.05mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:05:54 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDJZJWQVWJSRGHTI2AE3FGVVIJKNW3YYGX2BQETNSB1OORX10VZEJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2558.647mil|Location2.X=2564.896mil|Location1.Y=1207.866mil|Location2.Y=1214.115mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2558.647mil|Location2.X=2564.896mil|Location1.Y=1207.866mil|Location2.Y=1214.115mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Text "C10" (1.072mm,0.009mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2493.508mil|Location2.X=2502.632mil|Location1.Y=1315.247mil|Location2.Y=1324.371mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2493.508mil|Location2.X=2502.632mil|Location1.Y=1315.247mil|Location2.Y=1324.371mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.164mm &lt; 0.2mm) Between Board Edge And Text "FB10" (0.164mm,2.884mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2492.637mil|Location2.X=2501.761mil|Location1.Y=1760.563mil|Location2.Y=1769.687mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2492.637mil|Location2.X=2501.761mil|Location1.Y=1760.563mil|Location2.Y=1769.687mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.12mm &lt; 0.2mm) Between Board Edge And Text "R23" (0.762mm,15.713mm) on Bottom Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2491.211mil|Location2.X=2497.46mil|Location1.Y=1657.427mil|Location2.Y=1663.676mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2491.211mil|Location2.X=2497.46mil|Location1.Y=1657.427mil|Location2.Y=1663.676mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.043mm,10.728mm)(0.043mm,12.328mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2491.703mil|Location2.X=2497.952mil|Location1.Y=1531.836mil|Location2.Y=1538.085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2491.703mil|Location2.X=2497.952mil|Location1.Y=1531.836mil|Location2.Y=1538.085mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.068mm,7.538mm)(0.068mm,9.138mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.772mil|Location2.X=2499.896mil|Location1.Y=1350.871mil|Location2.Y=1359.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.772mil|Location2.X=2499.896mil|Location1.Y=1350.871mil|Location2.Y=1359.995mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.025mm &lt; 0.2mm) Between Board Edge And Track (0.1mm,3.778mm)(0.1mm,6.578mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.772mil|Location2.X=2499.896mil|Location1.Y=1350.871mil|Location2.Y=1359.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.772mil|Location2.X=2499.896mil|Location1.Y=1350.871mil|Location2.Y=1359.995mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.025mm &lt; 0.2mm) Between Board Edge And Track (0.1mm,3.778mm)(0.485mm,3.778mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.772mil|Location2.X=2499.896mil|Location1.Y=1461.107mil|Location2.Y=1470.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.772mil|Location2.X=2499.896mil|Location1.Y=1461.107mil|Location2.Y=1470.231mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.025mm &lt; 0.2mm) Between Board Edge And Track (0.1mm,6.578mm)(0.485mm,6.578mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125.412mil|Location2.X=3131.661mil|Location1.Y=1203.367mil|Location2.Y=1209.616mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125.412mil|Location2.X=3131.661mil|Location1.Y=1203.367mil|Location2.Y=1209.616mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (16.096mm,0.098mm)(16.096mm,2.638mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2875.412mil|Location2.X=2881.661mil|Location1.Y=1203.367mil|Location2.Y=1209.616mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2875.412mil|Location2.X=2881.661mil|Location1.Y=1203.367mil|Location2.Y=1209.616mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (3.396mm,0.098mm)(16.096mm,0.098mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2625.412mil|Location2.X=2631.661mil|Location1.Y=1203.367mil|Location2.Y=1209.616mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\desktop\Documents\Project Files\Altium\Projects\Rotary_Encoder\Rotary_Encoder_Round_Edge.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2625.412mil|Location2.X=2631.661mil|Location1.Y=1203.367mil|Location2.Y=1209.616mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (3.396mm,0.098mm)(3.396mm,2.638mm) on Top Overlay </acronym></a><br>Waived by Bantybanty Bantybanty at 02-01-2023 01:06:24 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

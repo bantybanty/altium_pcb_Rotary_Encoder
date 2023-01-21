@@ -1,0 +1,8 @@
+Added Component: Designator=FM10(Fiducial_Marker_1mm)
+Added Component: Designator=FM11(Fiducial_Marker_1mm)
+Added Component: Designator=FM12(Fiducial_Marker_1mm)
+Added Component: Designator=FM13(Fiducial_Marker_1mm)
+Added Member To Class: ClassName=U_1_Rotary_Encoder_Input_output Member=Component FM10 FM
+Added Member To Class: ClassName=U_1_Rotary_Encoder_Input_output Member=Component FM11 FM
+Added Member To Class: ClassName=U_1_Rotary_Encoder_Input_output Member=Component FM12 FM
+Added Member To Class: ClassName=U_1_Rotary_Encoder_Input_output Member=Component FM13 FM
